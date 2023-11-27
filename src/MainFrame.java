@@ -254,7 +254,7 @@ public class MainFrame extends JFrame implements KeyListener, ActionListener {  
      * 检查失败状态
      */
     public void check() {
-        if (checkLeft() == false && checkRight() == false && checkTop() == false && checkBottom() == false) {
+        if (!checkTop() && !checkTop() && !checkRight() && !checkLeft()) {
             lostflag = 2;
         }
     }
@@ -467,13 +467,13 @@ public class MainFrame extends JFrame implements KeyListener, ActionListener {  
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == item1) {
+        if (e.getSource().equals(item1)) {
             theme = "A-";
             System.out.println("换肤为经典");
-        } else if (e.getSource() == item2) {
+        } else if (e.getSource().equals(item2)) {
             System.out.println("换肤为霓虹");
             theme = "B-";
-        } else if (e.getSource() == item3) {
+        } else if (e.getSource().equals(item3)) {
             System.out.println("换肤为糖果");
             theme = "C-";
         }
